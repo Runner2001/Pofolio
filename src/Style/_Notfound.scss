@@ -1,0 +1,55 @@
+.container-notfound {
+  width: 100%;
+  min-height: 100vh;
+  @include flex(row, center, center);
+  .notfound {
+    @include flex(row, center, center);
+    gap: 2rem;
+    img {
+      min-width: 368px;
+      min-height: 368px;
+    }
+    .lost {
+      @include flex(column, left, flex-start);
+      gap: 2rem;
+      .text {
+        @include flex(column, left, flex-start);
+        gap: 0.5rem;
+        h3 {
+          font-size: 2rem;
+        }
+        p {
+          width: 269px;
+        }
+      }
+      .btn {
+        padding: 5px 24px;
+        background-color: $primary;
+        border-radius: 5px;
+        cursor: pointer;
+
+        &:hover {
+          color: white;
+          background-color: $secondary;
+        }
+      }
+    }
+  }
+}
+
+@include mobile() {
+  .container-notfound {
+    .notfound {
+      @include flex(column, center, center);
+      .lost {
+        @include flex(column, center, center);
+        .text {
+          @include flex(column, center, center);
+          p {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}

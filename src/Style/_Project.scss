@@ -1,0 +1,112 @@
+.ProjectSection {
+  background-color: $secondary-bg;
+  width: 100%;
+  position: relative;
+  padding: 20px 0;
+
+  .projectHeader {
+    @include flex(column, center, center);
+    margin-bottom: 50px;
+    h2 {
+      font-size: 36px;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+    .projectText {
+      width: 447px;
+      line-height: 150%;
+      text-align: center;
+      color: $secondary-white;
+    }
+  }
+  .projectBody {
+    position: relative;
+    max-width: 1280px;
+    padding: 0 24px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-areas:
+      "Design Web Mobile"
+      "Design illustrator Mobile";
+    gap: 24px;
+
+    .box {
+      width: 100%;
+      background-color: $primary-bg;
+      border-radius: 5px;
+      @include flex(column, none, center);
+      padding: 20px;
+      cursor: pointer;
+      transition: 0.45s ease-in;
+      position: relative;
+      overflow: hidden;
+
+      h3 {
+        font-size: 24px;
+      }
+      &:hover {
+        scale: 1.03;
+        background-color: $third-color;
+      }
+    }
+    .Design {
+      grid-area: Design;
+      justify-content: space-evenly;
+    }
+    .Web {
+      grid-area: Web;
+
+      h3 {
+        margin-top: 10px;
+        font-size: 18px;
+      }
+    }
+    .Illustrator {
+      grid-area: illustrator;
+
+      h3 {
+        margin-top: 10px;
+        font-size: 18px;
+      }
+    }
+    .Mobile {
+      grid-area: Mobile;
+      justify-content: space-evenly;
+    }
+  }
+}
+
+@include mobile {
+  .ProjectSection {
+    .projectHeader {
+      h2 {
+        font-size: 24px;
+      }
+      .projectText {
+        width: 85%;
+      }
+    }
+    .projectBody {
+      max-width: 1280px;
+      grid-template-areas:
+        "Design"
+        "Web"
+        "illustrator"
+        "Mobile";
+
+      gap: 24px;
+
+      .box {
+        h3 {
+          font-size: 20px;
+        }
+      }
+      .Design {
+        img {
+          width: 326px;
+          height: inherit;
+        }
+      }
+    }
+  }
+}

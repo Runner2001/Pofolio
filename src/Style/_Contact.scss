@@ -1,0 +1,86 @@
+.Contact {
+  margin-top: 4rem;
+  @include flex(column, space-between, center);
+  h3 {
+    font-size: 3rem;
+    margin-bottom: 3px;
+  }
+  h4 {
+    font-size: 1.5rem;
+    letter-spacing: 0.3em;
+    margin-bottom: 30px;
+  }
+  p {
+    width: 377px;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  .contact-box {
+    width: 130px;
+    height: 130px;
+    border-radius: 5px;
+    @include flex(column, center, center);
+    position: relative;
+    .copy {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+
+    .item {
+      @include flex(column, center, center);
+      gap: 5px;
+      h3 {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+.social-page {
+  margin-top: 40px;
+  margin-bottom: 100px;
+  @include flex(row, center, center);
+  gap: 24px;
+  .each {
+    @include flex(row, center, center);
+    width: 211px;
+    height: 48px;
+    gap: 20px;
+    background-color: $secondary-bg;
+    border-radius: 5px;
+    border: 1px solid $secondary-bg;
+    cursor: pointer;
+    h3 {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+    &:hover {
+      border: 1px solid $third-color;
+    }
+  }
+}
+@include mobile() {
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .social-page {
+    @include flex(column, center, center);
+    gap: 0.5rem;
+  }
+  .Contact {
+    h3 {
+      font-size: 1.5rem;
+    }
+    h4 {
+      font-size: 1rem;
+    }
+    p {
+      width: 90%;
+    }
+  }
+}

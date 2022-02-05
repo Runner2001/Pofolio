@@ -1,0 +1,104 @@
+.herosection {
+  @include flex(row, space-evenly, center);
+  max-width: 1280px;
+  margin: 0 auto;
+  .imagePlace {
+    order: 2;
+    width: 100%;
+
+    .imageBack {
+      background-color: $secondary-bg;
+      max-width: 548px;
+      height: 635px;
+      position: relative;
+
+      img {
+        max-width: 523px;
+        max-height: 523px;
+        position: absolute;
+        bottom: 0%;
+      }
+    }
+  }
+
+  .textPlace {
+    width: 100%;
+    @include flex(row, center, center);
+
+    .alltext {
+      max-width: 80%;
+      position: relative;
+      .open {
+        margin-bottom: 20px;
+        margin-left: -40px;
+      }
+      .wrap {
+        position: relative;
+        .caption {
+          color: $secondary-white;
+        }
+        .hero {
+          font-size: 64px;
+          color: $primary;
+          font-weight: 700;
+        }
+        .herotext {
+          font-size: 18px;
+          font-weight: 600;
+          color: $secondary-white;
+        }
+      }
+      .close {
+        margin-top: 20px;
+        margin-right: -40px;
+        float: right;
+      }
+    }
+  }
+}
+
+@include mobile {
+  .herosection {
+    @include flex(column, none, center);
+    margin: 0 auto;
+    .imagePlace {
+      order: 1;
+
+      .imageBack {
+        max-width: 548px;
+        height: 438px;
+
+        img {
+          width: 331px;
+          height: 331px;
+          right: 5%;
+        }
+      }
+    }
+
+    .textPlace {
+      order: 2;
+      width: 100%;
+      @include flex(row, center, center);
+
+      .alltext {
+        max-width: 80%;
+        position: relative;
+        margin: 0 auto;
+        margin-top: -20px;
+        .open {
+          margin-left: -20px;
+        }
+        .wrap {
+          margin-left: 0px;
+          .hero {
+            font-size: 48px;
+          }
+        }
+        .close {
+          margin-right: -20px;
+        }
+      }
+    }
+  }
+}
